@@ -1,4 +1,4 @@
-# Languageize
+# Languagize
 
 **languagize** is a modular library designed to provide _utilities_ for working with **programming languages**.
 
