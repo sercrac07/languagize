@@ -1,0 +1,31 @@
+{
+  "name": "languagize",
+  "description": "Modular library designed to provide utilities for working with programming languages",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sercrac07/languagize.git"
+  },
+  "scripts": {
+    "test": "vitest",
+    "build": "node build.mjs"
+  },
+  "keywords": [
+    "lexer",
+    "parser",
+    "formatter",
+    "languagize"
+  ],
+  "author": "sercrac07",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.10.3",
+    "eslint": "^9.17.0",
+    "glob": "^11.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.19.0",
+    "vitest": "^2.1.8"
+  }
+}
