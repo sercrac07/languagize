@@ -1,0 +1,26 @@
+{
+  "name": "@languagize/markdown",
+  "description": "Utilities for working with Markdown",
+  "version": "0.0.1",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sercrac07/languagize.git",
+    "directory": "packages/markdown"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "lexer",
+    "parser",
+    "formatter",
+    "languagize",
+    "markdown"
+  ],
+  "author": "sercrac07",
+  "license": "MIT"
+}
