@@ -26,5 +26,25 @@ describe('Markdown', () => {
       { type: TokenType.EndOfFile },
     ]
     expect(paragraphTokens).toEqual(expectedParagraphTokens)
+
+    const symbolsTokens = tokenize('*_`~^!#()[]|-\\')
+    const expectedSymbolsTokens: Token[] = [
+      { type: TokenType.Asterisk, value: '*', range: { start: { row: 0, column: 0 }, end: { row: 0, column: 1 } } },
+      { type: TokenType.Underscore, value: '_', range: { start: { row: 0, column: 1 }, end: { row: 0, column: 2 } } },
+      { type: TokenType.Backtick, value: '`', range: { start: { row: 0, column: 2 }, end: { row: 0, column: 3 } } },
+      { type: TokenType.Tilde, value: '~', range: { start: { row: 0, column: 3 }, end: { row: 0, column: 4 } } },
+      { type: TokenType.Caret, value: '^', range: { start: { row: 0, column: 4 }, end: { row: 0, column: 5 } } },
+      { type: TokenType.Exclamation, value: '!', range: { start: { row: 0, column: 5 }, end: { row: 0, column: 6 } } },
+      { type: TokenType.Hash, value: '#', range: { start: { row: 0, column: 6 }, end: { row: 0, column: 7 } } },
+      { type: TokenType.ParenthesisOpen, value: '(', range: { start: { row: 0, column: 7 }, end: { row: 0, column: 8 } } },
+      { type: TokenType.ParenthesisClose, value: ')', range: { start: { row: 0, column: 8 }, end: { row: 0, column: 9 } } },
+      { type: TokenType.BracketOpen, value: '[', range: { start: { row: 0, column: 9 }, end: { row: 0, column: 10 } } },
+      { type: TokenType.BracketClose, value: ']', range: { start: { row: 0, column: 10 }, end: { row: 0, column: 11 } } },
+      { type: TokenType.Pipe, value: '|', range: { start: { row: 0, column: 11 }, end: { row: 0, column: 12 } } },
+      { type: TokenType.Dash, value: '-', range: { start: { row: 0, column: 12 }, end: { row: 0, column: 13 } } },
+      { type: TokenType.Backslash, value: '\\', range: { start: { row: 0, column: 13 }, end: { row: 0, column: 14 } } },
+      { type: TokenType.EndOfFile },
+    ]
+    expect(symbolsTokens).toEqual(expectedSymbolsTokens)
   })
 })

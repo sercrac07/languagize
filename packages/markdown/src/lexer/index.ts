@@ -8,7 +8,21 @@ class Lexer {
   private Spec: [RegExp, (typeof TokenType)[keyof typeof TokenType]][] = [
     [/^\r?\n/, TokenType.NewLine],
     [/^\s+/, TokenType.Whitespace],
-    [/^[^\s]+/, TokenType.Word],
+    [/^\*/, TokenType.Asterisk],
+    [/^_/, TokenType.Underscore],
+    [/^`/, TokenType.Backtick],
+    [/^~/, TokenType.Tilde],
+    [/^\^/, TokenType.Caret],
+    [/^!/, TokenType.Exclamation],
+    [/^#/, TokenType.Hash],
+    [/^\(/, TokenType.ParenthesisOpen],
+    [/^\)/, TokenType.ParenthesisClose],
+    [/^\[/, TokenType.BracketOpen],
+    [/^\]/, TokenType.BracketClose],
+    [/^\|/, TokenType.Pipe],
+    [/^-/, TokenType.Dash],
+    [/^\\/, TokenType.Backslash],
+    [/^[^\s*_`~^!#()[\]|\\-]+/, TokenType.Word],
   ]
 
   private getPosition(): typeof this.position {
