@@ -6,6 +6,7 @@ class Lexer {
   private cursor = 0
 
   private Spec: [RegExp, (typeof TokenType)[keyof typeof TokenType]][] = [
+    [/^\r?\n/, TokenType.NewLine],
     [/^\s+/, TokenType.Whitespace],
     [/^[^\s]+/, TokenType.Word],
   ]
