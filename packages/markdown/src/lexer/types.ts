@@ -12,12 +12,13 @@ export const TokenType = {
   Word: 'WORD',
   Whitespace: 'WHITESPACE',
   EndOfFile: 'END_OF_FILE',
+  NewLine: 'NEW_LINE',
 } as const
 
 /**
  *
  */
-export type Token = WordToken | EndOfFileToken | WhitespaceToken
+export type Token = WordToken | EndOfFileToken | WhitespaceToken | NewLineToken
 
 export interface WordToken {
   type: typeof TokenType.Word
@@ -33,4 +34,10 @@ export interface WhitespaceToken {
 
 export interface EndOfFileToken {
   type: typeof TokenType.EndOfFile
+}
+
+export interface NewLineToken {
+  type: typeof TokenType.NewLine
+  value: string
+  range: Range
 }
