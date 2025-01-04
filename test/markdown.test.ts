@@ -8,7 +8,7 @@ describe('Markdown', () => {
   it('should tokenize', () => {
     expect(tokenize).toBeDefined()
 
-    const paragraphTokens = tokenize('This is a paragraph.')
+    const paragraphTokens = tokenize('This is a paragraph.\nWith multiple lines.')
     const expectedParagraphTokens: Token[] = [
       { type: TokenType.Word, value: 'This', range: { start: { row: 0, column: 0 }, end: { row: 0, column: 4 } } },
       { type: TokenType.Whitespace, value: ' ', range: { start: { row: 0, column: 4 }, end: { row: 0, column: 5 } } },
@@ -17,6 +17,12 @@ describe('Markdown', () => {
       { type: TokenType.Word, value: 'a', range: { start: { row: 0, column: 8 }, end: { row: 0, column: 9 } } },
       { type: TokenType.Whitespace, value: ' ', range: { start: { row: 0, column: 9 }, end: { row: 0, column: 10 } } },
       { type: TokenType.Word, value: 'paragraph.', range: { start: { row: 0, column: 10 }, end: { row: 0, column: 20 } } },
+      { type: TokenType.NewLine, value: '\n', range: { start: { row: 0, column: 20 }, end: { row: 1, column: 0 } } },
+      { type: TokenType.Word, value: 'With', range: { start: { row: 1, column: 0 }, end: { row: 1, column: 4 } } },
+      { type: TokenType.Whitespace, value: ' ', range: { start: { row: 1, column: 4 }, end: { row: 1, column: 5 } } },
+      { type: TokenType.Word, value: 'multiple', range: { start: { row: 1, column: 5 }, end: { row: 1, column: 13 } } },
+      { type: TokenType.Whitespace, value: ' ', range: { start: { row: 1, column: 13 }, end: { row: 1, column: 14 } } },
+      { type: TokenType.Word, value: 'lines.', range: { start: { row: 1, column: 14 }, end: { row: 1, column: 20 } } },
       { type: TokenType.EndOfFile },
     ]
     expect(paragraphTokens).toEqual(expectedParagraphTokens)
