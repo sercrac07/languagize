@@ -66,6 +66,8 @@ export interface WhitespaceToken {
 
 export interface EndOfFileToken {
   type: typeof TokenType.EndOfFile
+  value: string
+  range: Range
 }
 
 export interface NewLineToken {

@@ -40,7 +40,7 @@ class Lexer {
       tokens.push(this.match())
     }
 
-    tokens.push({ type: TokenType.EndOfFile })
+    tokens.push({ type: TokenType.EndOfFile, value: '', range: { start: this.getPosition(), end: this.getPosition() } })
 
     return tokens
   }

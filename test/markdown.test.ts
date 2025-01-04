@@ -2,7 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import { describe, expect, it } from 'vitest'
-import { parse, tokenize, TokenType } from '../packages/markdown/src'
+import { parse, Token, tokenize, TokenType } from '../packages/markdown/src'
 
 describe('Markdown', () => {
   it('should tokenize', () => {
@@ -23,7 +23,7 @@ describe('Markdown', () => {
       { type: TokenType.Word, value: 'multiple', range: { start: { row: 1, column: 5 }, end: { row: 1, column: 13 } } },
       { type: TokenType.Whitespace, value: ' ', range: { start: { row: 1, column: 13 }, end: { row: 1, column: 14 } } },
       { type: TokenType.Word, value: 'lines.', range: { start: { row: 1, column: 14 }, end: { row: 1, column: 20 } } },
-      { type: TokenType.EndOfFile },
+      { type: TokenType.EndOfFile, value: '', range: { start: { row: 1, column: 20 }, end: { row: 1, column: 20 } } },
     ]
     expect(paragraphTokens).toEqual(expectedParagraphTokens)
 
@@ -43,7 +43,7 @@ describe('Markdown', () => {
       { type: TokenType.Pipe, value: '|', range: { start: { row: 0, column: 11 }, end: { row: 0, column: 12 } } },
       { type: TokenType.Dash, value: '-', range: { start: { row: 0, column: 12 }, end: { row: 0, column: 13 } } },
       { type: TokenType.Backslash, value: '\\', range: { start: { row: 0, column: 13 }, end: { row: 0, column: 14 } } },
-      { type: TokenType.EndOfFile },
+      { type: TokenType.EndOfFile, value: '', range: { start: { row: 0, column: 14 }, end: { row: 0, column: 14 } } },
     ]
     expect(symbolsTokens).toEqual(expectedSymbolsTokens)
   })
