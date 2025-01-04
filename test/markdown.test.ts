@@ -2,7 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import { describe, expect, it } from 'vitest'
-import { tokenize, TokenType } from '../packages/markdown/src'
+import { parse, tokenize, TokenType } from '../packages/markdown/src'
 
 describe('Markdown', () => {
   it('should tokenize', () => {
@@ -46,5 +46,9 @@ describe('Markdown', () => {
       { type: TokenType.EndOfFile },
     ]
     expect(symbolsTokens).toEqual(expectedSymbolsTokens)
+  })
+
+  it('should parse', () => {
+    expect(parse).toBeDefined()
   })
 })
